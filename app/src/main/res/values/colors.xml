@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_theme">#489cfa</color>
+    <color name="base_color_text_gray">#9fa0a0</color>
+    <color name="color_bottom_text_normal">#9da0a4</color>
+    <color name="color_bottom_text_press">#4f9ef6</color>
+
+    <color name="button_default">#4c4d51</color>
+    <color name="button_pressed">#58585c</color>
+    <color name="white">#ffffff</color>
+    <color name="bottom_line">#ffeeeeee</color>
+    <color name="color_background">#EBEBEB</color>
+</resources>

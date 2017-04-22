@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/info_avatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_avatar"/>
+
+        <TextView
+            android:id="@+id/info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/info_avatar"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/info_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info_name"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/info_avatar"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bottom_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/gexingqianm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="个性签名："
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/user_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/gexingqianm"
+            android:maxLines="2"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bottom_line" />
+
+    <Button
+        android:id="@+id/add_friend_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_login_selector"
+        android:text="添加好友"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/chat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_login_selector"
+        android:text="聊天"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
