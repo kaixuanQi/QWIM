@@ -44,7 +44,7 @@ public class MoreActivity extends BaseActivity{
                 if (MyUser.getCurrentUser(this)!=null) {
                     startActivity(new Intent(this, ChangePasswordActivity.class));
                 } else {
-                    Toast.makeText(this, "您并没有登录",Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "您并没有登录",Toast.LENGTH_SHORT).show();
                 }
                 break;
             case 1: // 用户协议
@@ -55,7 +55,7 @@ public class MoreActivity extends BaseActivity{
                 if (MyUser.getCurrentUser(this)!=null) {
                     onExit();
                 } else {
-                    Toast.makeText(this, "您并没有登录",Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "您并没有登录",Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
@@ -74,7 +74,7 @@ public class MoreActivity extends BaseActivity{
                         MyUser.logOut(MoreActivity.this);
                         startActivity(new Intent(MoreActivity.this,LoginActivity.class));
                         finish();
-                        
+
                     }
                 }).show();
     }
