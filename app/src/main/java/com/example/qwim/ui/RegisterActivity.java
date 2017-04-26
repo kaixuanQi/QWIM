@@ -2,8 +2,6 @@ package com.example.qwim.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +10,7 @@ import android.widget.Toast;
 import com.example.qwim.R;
 import com.example.qwim.base.BaseActivity;
 import com.example.qwim.event.FinishEvent;
-import com.example.qwim.user.UserModel;
+import com.example.qwim.bean.UserModel;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -1,7 +1,6 @@
-package com.example.qwim.user;
+package com.example.qwim.bean;
 
 import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.datatype.BmobFile;
 
 /**
  * Created by qikaixuan on 17-4-18.

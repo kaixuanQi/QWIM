@@ -2,8 +2,7 @@ package com.example.qwim.adapter;
 
 import android.content.Context;
 
-import com.example.qwim.R;
-import com.example.qwim.user.Friend;
+import com.example.qwim.bean.Friend;
 
 import java.util.Collection;
 

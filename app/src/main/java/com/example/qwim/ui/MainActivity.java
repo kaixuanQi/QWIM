@@ -13,12 +13,6 @@ import com.example.qwim.ui.fragment.ContactFragment;
 import com.example.qwim.ui.fragment.ConversationFragment;
 import com.example.qwim.ui.fragment.MyFragment;
 import com.example.qwim.R;
-import com.example.qwim.user.MyUser;
-
-import cn.bmob.newim.BmobIM;
-import cn.bmob.newim.listener.ConnectListener;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.exception.BmobException;
 
 public class MainActivity extends AppCompatActivity {
 

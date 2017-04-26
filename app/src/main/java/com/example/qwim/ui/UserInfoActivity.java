@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.qwim.R;
 import com.example.qwim.base.BaseActivity;
-import com.example.qwim.user.MyUser;
+import com.example.qwim.bean.MyUser;
 
 import cn.bmob.newim.bean.BmobIMUserInfo;
 import cn.bmob.v3.BmobUser;

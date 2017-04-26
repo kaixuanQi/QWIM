@@ -59,6 +59,26 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseRe
         notifyDataSetChanged();
         return this;
     }
+    /**
+     * 删除数据
+     * @param position
+     */
+    public void remove(int position) {
+        int more = getItemCount() - lists.size();
+        lists.remove(position - more);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * 获取指定position的Item
+     * @param position
+     * @return
+     */
+    public T getItem(int position) {
+        int more = getItemCount() - lists.size();
+        return lists.get(position - more);
+    }
+
     @Override
     public BaseRecyclerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         int layoutId = items.getItemLayoutId(viewType);

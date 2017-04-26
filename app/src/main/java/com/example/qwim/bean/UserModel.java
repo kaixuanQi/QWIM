@@ -1,13 +1,11 @@
-package com.example.qwim.user;
+package com.example.qwim.bean;
 
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.LogInListener;

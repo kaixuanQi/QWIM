@@ -1,14 +1,13 @@
 package com.example.qwim.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.qwim.R;
-import com.example.qwim.user.MyUser;
+import com.example.qwim.bean.MyUser;
 
 /**
  * Created by qikaixuan on 17-4-21.
