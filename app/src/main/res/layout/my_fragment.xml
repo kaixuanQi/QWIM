@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
@@ -15,10 +16,10 @@
             android:id="@+id/profile_image"
             android:layout_width="96dp"
             android:layout_height="96dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/default_avatar"
             app:civ_border_color="@color/colorPrimary"
-            app:civ_border_width="2dp"
-            android:layout_marginBottom="20dp"/>
+            app:civ_border_width="2dp"/>
 
         <TextView
             android:id="@+id/tv_user"
@@ -70,17 +71,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:text="性别:"
             android:textSize="16sp"/>
 
-        <EditText
-            android:id="@+id/et_sex"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:lines="1"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"/>
+            android:orientation="horizontal">
 
+            <RadioButton
+                android:id="@+id/female_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                />
+
+            <RadioButton
+                android:id="@+id/male_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"/>
+        </RadioGroup>
     </LinearLayout>
 
     <!--年龄-->
@@ -95,6 +108,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:text="年龄:"
             android:textSize="16sp"/>
 
@@ -103,6 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="1"
+            android:background="@null"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"/>
 
@@ -120,6 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:gravity="top|left"
             android:text="简介:"
             android:textSize="16sp"/>
@@ -133,16 +149,4 @@
             android:textSize="16sp"/>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_update_ok"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/button_bg"
-        android:text="确定修改"
-        android:textColor="@android:color/white"
-        android:visibility="gone"/>
-
-
 </LinearLayout>

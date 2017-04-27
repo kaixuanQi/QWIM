@@ -32,15 +32,6 @@ public class MyFragment extends Fragment implements View.OnClickListener{
         return mView;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        findView();
-    }
-
-    private void findView() {
-
-    }
 
     @Override
     public void onClick(View v) {
