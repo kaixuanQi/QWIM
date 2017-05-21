@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.qwim.R;
+import com.example.qwim.adapter.base.BaseViewHolder;
 import com.example.qwim.bean.MyUser;
 
 /**

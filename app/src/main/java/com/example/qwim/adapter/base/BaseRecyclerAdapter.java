@@ -1,10 +1,13 @@
-package com.example.qwim.adapter;
+package com.example.qwim.adapter.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.qwim.adapter.IMultipleItem;
+import com.example.qwim.adapter.OnRecyclerViewListener;
 
 import java.util.ArrayList;
 import java.util.Collection;

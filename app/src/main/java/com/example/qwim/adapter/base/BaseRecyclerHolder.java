@@ -1,4 +1,4 @@
-package com.example.qwim.adapter;
+package com.example.qwim.adapter.base;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.qwim.QWIMApplication;
-import com.example.qwim.R;
 
 /**
  * Created by qikaixuan on 17-4-25.
@@ -96,7 +95,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder{
      */
     public BaseRecyclerHolder setImageView(String avatar, int defaultRes, int viewId) {
         ImageView avatarImage = getView(viewId);
-        Glide.with(QWIMApplication.getContext()).load(avatar).placeholder(R.drawable.default_avatar).into(avatarImage);
+        Glide.with(QWIMApplication.getContext()).load(avatar).placeholder(defaultRes).into(avatarImage);
         return this;
     }
 }

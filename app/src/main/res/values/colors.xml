@@ -14,4 +14,5 @@
     <color name="white">#ffffff</color>
     <color name="bottom_line">#ffeeeeee</color>
     <color name="color_background">#EBEBEB</color>
+    <color name="color_msg_system_time_bg">#20000000</color>
 </resources>

@@ -1,8 +1,10 @@
-package com.example.qwim.adapter;
+package com.example.qwim.adapter.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.example.qwim.adapter.OnRecyclerViewListener;
 
 /**
  * Created by qikaixuan on 17-4-21.

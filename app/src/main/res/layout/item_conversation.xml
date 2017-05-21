@@ -44,20 +44,22 @@
             android:id="@+id/recent_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"/>
-        <TextView
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/recent_time"
             android:layout_marginRight="10dp"
-            android:textColor="@color/white"
-            android:background="@mipmap/aii"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
             android:id="@+id/unread_msg_count"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/recent_time"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:background="@mipmap/aii"
+            android:textColor="@color/white"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import com.example.qwim.QWIMApplication;
 import com.example.qwim.R;
+import com.example.qwim.bean.MyUser;
 
+import cn.bmob.newim.BmobIM;
+import cn.bmob.newim.bean.BmobIMUserInfo;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
@@ -34,7 +37,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mPassword = (EditText) findViewById(R.id.et_password);
         Button login = (Button) findViewById(R.id.btn_login);
         TextView toRegister = (TextView) findViewById(R.id.tv_register);
-
         login.setOnClickListener(this);
         toRegister.setOnClickListener(this);
     }
@@ -57,6 +59,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void done(BmobUser bmobUser, BmobException e) {
                         if (bmobUser != null) {
                             Toast.makeText(QWIMApplication.getContext(), "登录成功,请稍候！", Toast.LENGTH_SHORT).show();
+                            MyUser user =(MyUser)bmobUser;
+                            BmobIM.getInstance().updateUserInfo(new BmobIMUserInfo(user.getObjectId(), user.getUsername(), user.getAvatar()));
                             startActivity(new Intent(LoginActivity.this,MainActivity.class));
                             finish();
                         } else {

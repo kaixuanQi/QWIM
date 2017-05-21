@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.qwim">
+          package="com.example.qwim">
 
     <!--网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- 监听网络的变化 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <!-- 设备休眠 -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- sd卡存储-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--摄像头-->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <!--录音-->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <!--通知震动-->
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".QWIMApplication"
@@ -30,29 +30,32 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="Bmob_APP_KEY"
-            android:value="3bad762fd3322c61ebcd4f00e40e93c4" />
+            android:value="3bad762fd3322c61ebcd4f00e40e93c4"/>
         <!-- 主页 android:windowSoftInputMode="adjustPan":避免输入法面板遮挡问题
         android:screenOrientation="portrait":限制页面在竖屏显示-->
         <activity
             android:name=".ui.MainActivity"
             android:label="主界面"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <!--欢迎-->
-        <activity android:name=".ui.SplashActivity"
+        <activity
+            android:name=".ui.SplashActivity"
             android:theme="@style/NoActivityFullscreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <!--登录-->
         <activity
             android:name=".ui.LoginActivity"
-            android:launchMode="singleTask"
             android:label="登录"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/NoActivityFullscreen"/>
         <!--注册-->
         <activity
             android:name=".ui.RegisterActivity"
@@ -62,31 +65,33 @@
             android:name=".ui.MoreActivity"
             android:label="设置"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.AddFriendActivity"
-                  android:label="添加朋友"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".ui.UserInfoActivity"
-                  android:label="用户信息"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.AddFriendActivity"
+            android:label="添加朋友"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.UserInfoActivity"
+            android:label="用户信息"
+            android:screenOrientation="portrait"/>
 
 
         <receiver android:name="cn.bmob.newim.core.ConnectChangeReceiver">
             <intent-filter>
-                <action android:name="cn.bmob.action.RECONNECT" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="cn.bmob.action.RECONNECT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
 
         <service
             android:name="cn.bmob.newim.core.service.BmobIMService"
-            android:process=":bmobcore" />
+            android:process=":bmobcore"/>
         <service
             android:name="cn.bmob.newim.core.service.NotifyService"
-            android:process=":bmobcore" />
-        <service android:name="cn.bmob.newim.core.service.ReConnectService" />
-        <service android:name="cn.bmob.newim.core.service.HeartBeatService" />
+            android:process=":bmobcore"/>
+        <service android:name="cn.bmob.newim.core.service.ReConnectService"/>
+        <service android:name="cn.bmob.newim.core.service.HeartBeatService"/>
     </application>
 
 </manifest>

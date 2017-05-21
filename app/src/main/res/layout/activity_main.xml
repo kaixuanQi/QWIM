@@ -17,27 +17,27 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
+        android:background="@drawable/top_bar"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/btn_conversation"
-            android:drawableTop="@drawable/tab_message_btn"
             style="@style/main_nav_bottom"
+            android:drawableTop="@drawable/tab_message_btn"
             android:text="消息"/>
 
         <RadioButton
             android:id="@+id/btn_contact"
-
-            android:drawableTop="@drawable/tab_contact_btn"
             style="@style/main_nav_bottom"
+            android:drawableTop="@drawable/tab_contact_btn"
             android:text="联系人"/>
 
         <RadioButton
             android:id="@+id/btn_setting"
+            style="@style/main_nav_bottom"
             android:drawableTop="@drawable/tab_set_btn"
-            android:text="设置"
-            style="@style/main_nav_bottom"/>
+            android:text="设置"/>
     </RadioGroup>
 
 </LinearLayout>

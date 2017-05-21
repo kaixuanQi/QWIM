@@ -20,7 +20,11 @@ import com.example.qwim.adapter.IMultipleItem;
 import com.example.qwim.adapter.OnRecyclerViewListener;
 import com.example.qwim.bean.Conversation;
 import com.example.qwim.bean.PrivateConversation;
+import com.example.qwim.event.RefreshEvent;
 import com.example.qwim.ui.AddFriendActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +32,7 @@ import java.util.List;
 
 import cn.bmob.newim.BmobIM;
 import cn.bmob.newim.bean.BmobIMConversation;
+import cn.bmob.newim.event.MessageEvent;
 import cn.bmob.newim.event.OfflineMessageEvent;
 
 /**
@@ -48,12 +53,12 @@ public class ConversationFragment extends Fragment {
         IMultipleItem<Conversation> multipleItem = new IMultipleItem<Conversation>() {
             @Override
             public int getItemLayoutId(int viewtype) {
-                return 0;
+                return R.layout.item_conversation;
             }
 
             @Override
             public int getItemViewType(int postion, Conversation conversation) {
-                return R.layout.item_conversation;
+                return 0;
             }
 
             @Override
@@ -130,7 +135,49 @@ public class ConversationFragment extends Fragment {
         Collections.sort(conversationList);
         return conversationList;
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
 
+    @Override
+    public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
+    /**注册自定义消息接收事件
+     * @param event
+     */
+    @Subscribe
+    public void onEventMainThread(RefreshEvent event){
+
+        //因为新增`新朋友`这种会话类型
+        mAdapter.bindDatas(getConversations());
+        mAdapter.notifyDataSetChanged();
+    }
+
+    /**注册离线消息接收事件
+     * @param event
+     */
+    public void onEventMainThread(OfflineMessageEvent event){
+        //重新刷新列表
+        mAdapter.bindDatas(getConversations());
+        mAdapter.notifyDataSetChanged();
+    }
+    /**注册消息接收事件
+     * @param event
+     * 1、与用户相关的由开发者自己维护，SDK内部只存储用户信息
+     * 2、开发者获取到信息后，可调用SDK内部提供的方法更新会话
+     */
+    @Subscribe
+    public void onEventMainThread(MessageEvent event){
+        //重新获取本地消息并刷新列表
+        mAdapter.bindDatas(getConversations());
+        mAdapter.notifyDataSetChanged();
+    }
+
+    //toolbar选项
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_add,menu);
@@ -145,10 +192,5 @@ public class ConversationFragment extends Fragment {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onEventMainThread(OfflineMessageEvent event){
-        //重新刷新列表
-
     }
 }

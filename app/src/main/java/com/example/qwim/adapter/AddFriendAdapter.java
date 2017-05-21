@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.qwim.R;
+import com.example.qwim.adapter.base.BaseViewHolder;
 import com.example.qwim.bean.MyUser;
 
 import java.util.ArrayList;

@@ -9,10 +9,19 @@ import android.view.KeyEvent;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.qwim.bean.MyUser;
+import com.example.qwim.event.RefreshEvent;
 import com.example.qwim.ui.fragment.ContactFragment;
 import com.example.qwim.ui.fragment.ConversationFragment;
 import com.example.qwim.ui.fragment.MyFragment;
 import com.example.qwim.R;
+
+import org.greenrobot.eventbus.EventBus;
+
+import cn.bmob.newim.BmobIM;
+import cn.bmob.newim.listener.ConnectListener;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,19 +35,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        MyUser user = BmobUser.getCurrentUser(this,MyUser.class);
-//        BmobIM.connect(user.getObjectId(), new ConnectListener() {
-//            @Override
-//            public void done(String uid, BmobException e) {
-//                if (e == null) {
-//
-//                    //服务器连接成功就发送一个更新事件，同步更新会话及主页的小红点
-//
-//                } else {
-//
-//                }
-//            }
-//        });
+        MyUser user = BmobUser.getCurrentUser(this,MyUser.class);
+        BmobIM.connect(user.getObjectId(), new ConnectListener() {
+            @Override
+            public void done(String uid, BmobException e) {
+                if (e == null) {
+                    //服务器连接成功就发送一个更新事件，同步更新会话及主页的小红点
+                    EventBus.getDefault().post(new RefreshEvent());
+                } else {
+
+                }
+            }
+        });
         initTab();
         initFragment();
     }

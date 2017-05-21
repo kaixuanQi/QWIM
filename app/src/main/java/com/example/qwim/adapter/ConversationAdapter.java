@@ -5,6 +5,8 @@ import android.view.View;
 
 import com.example.qwim.R;
 import com.example.qwim.TimeUtil;
+import com.example.qwim.adapter.base.BaseRecyclerAdapter;
+import com.example.qwim.adapter.base.BaseRecyclerHolder;
 import com.example.qwim.bean.Conversation;
 
 import java.util.Collection;
@@ -22,14 +24,9 @@ public class ConversationAdapter extends BaseRecyclerAdapter<Conversation> {
     @Override
     public void bindView(BaseRecyclerHolder holder, Conversation conversation, int position) {
         //头像
-        Object obj = conversation.getAvatar();
-        if (obj instanceof String) {
-            String avatar=(String)obj;
-            holder.setImageView(avatar, R.drawable.default_avatar, R.id.conversation_avatar);
-        }else{
-            int defaultRes = (int)obj;
-            holder.setImageView(null, defaultRes, R.id.conversation_avatar);
-        }
+        String avatar= (String) conversation.getAvatar();
+        holder.setImageView(avatar, R.drawable.default_avatar, R.id.conversation_avatar);
+
         //消息
         holder.setText(R.id.conversation_msg, conversation.getLastMessageContent());
         //标题

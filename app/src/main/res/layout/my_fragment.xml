@@ -22,12 +22,10 @@
             app:civ_border_width="2dp"/>
 
         <TextView
-            android:id="@+id/tv_user"
+            android:id="@+id/tv_username"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:background="@drawable/button_bg"
             android:gravity="center"
-            android:text="编辑资料"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             />
@@ -38,7 +36,7 @@
     <LinearLayout
         android:id="@+id/ll_line1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
@@ -46,13 +44,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:text="姓名:"
-            android:textSize="16sp"/>
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
             android:lines="1"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"/>
@@ -63,7 +64,7 @@
     <LinearLayout
         android:id="@+id/ll_line2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
@@ -73,12 +74,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="性别:"
-            android:textSize="16sp"/>
+            android:textSize="20sp"/>
 
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -100,7 +103,7 @@
     <LinearLayout
         android:id="@+id/ll_line3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
@@ -110,14 +113,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="年龄:"
-            android:textSize="16sp"/>
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/et_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="1"
+            android:layout_gravity="center_vertical"
             android:background="@null"
+            android:lines="1"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"/>
 
@@ -127,7 +131,7 @@
     <LinearLayout
         android:id="@+id/ll_line4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
@@ -138,15 +142,26 @@
             android:layout_gravity="center_vertical"
             android:gravity="top|left"
             android:text="简介:"
-            android:textSize="16sp"/>
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/et_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
             android:gravity="top|left"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"/>
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_login_selector"
+        android:text="编辑资料"
+        android:textSize="16sp"/>
 </LinearLayout>
